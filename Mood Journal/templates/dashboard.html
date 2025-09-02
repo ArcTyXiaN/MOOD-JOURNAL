@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Journal | Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashstyle.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('entry') }}">New Entry</a></li>
+      <li><a href="{{ url_for('dashboard') }}" class="active">Dashboard</a></li>
+      <li><a href="{{ url_for('settings') }}">Settings</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <header>
+      <h1>Your Mood Dashboard</h1>
+      <p>Welcome back! Here's an overview of your recent mood patterns and journal activity.</p>
+    </header>
+
+    <!-- Quick Summary -->
+    <section id="summary">
+      <h2>Quick Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <h3>Entries This Week</h3>
+          <p id="entries-week">7</p>
+        </div>
+        <div class="summary-card">
+          <h3>Most Common Mood</h3>
+          <p id="common-mood">Calm</p>
+        </div>
+        <div class="summary-card">
+          <h3>Streak</h3>
+          <p id="streak">5 days</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mood Trends Chart -->
+    <section id="chart-section">
+      <h2>Your Mood Trends</h2>
+      <canvas id="moodChart"></canvas>
+    </section>
+
+    <!-- Recent Journal Entries -->
+    <section id="journal-entries">
+      <h2>Recent Entries</h2>
+      <ul id="entries-list">
+        <li><strong>August 30:</strong> Felt energetic after morning exercise.</li>
+        <li><strong>August 29:</strong> A bit stressed with project deadlines.</li>
+        <li><strong>August 28:</strong> Calm evening, read a good book.</li>
+      </ul>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section id="progress">
+      <h2>Progress Tracker</h2>
+      <p>You've logged moods for <span id="days-logged">22</span> days this month.</p>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 70%;"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mood Journal | Track. Reflect. Grow.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

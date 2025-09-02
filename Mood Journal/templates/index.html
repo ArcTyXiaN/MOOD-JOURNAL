@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Journal | Home</title>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='indexstyle.css') }}">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+      <li><a href="{{ url_for('entry') }}">New Entry</a></li>
+      <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('settings') }}">Settings</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Welcome to <span class="highlight">Mood Journal</span></h1>
+    <p>Track your emotions, reflect daily, and grow mindfully.</p>
+    <a href="{{ url_for('entry') }}" class="btn primary-btn">Start Journaling</a>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Why Use Mood Journal?</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Reflect</h3>
+        <p>Write your thoughts and feelings in daily entries.</p>
+      </div>
+      <div class="feature">
+        <h3>Track</h3>
+        <p>Visualize your mood patterns over time with insights.</p>
+      </div>
+      <div class="feature">
+        <h3>Grow</h3>
+        <p>Discover trends that help you build emotional balance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial">
+      <p>"This app has completely changed how I reflect on my days."</p>
+      <span>- Sarah K.</span>
+    </div>
+    <div class="testimonial">
+      <p>"I finally understand my emotions better. Highly recommended!"</p>
+      <span>- David A.</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mood Journal. All rights reserved.</p>
+    <p>
+      <a href="{{ url_for('privacy') }}">Privacy Policy</a> |
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

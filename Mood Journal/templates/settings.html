@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Journal | Settings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='setstyle.css') }}">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('entry') }}">New Entry</a></li>
+      <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('settings') }}" class="active">Settings</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Settings</h1>
+
+    <!-- Theme Section -->
+    <section class="settings-section">
+      <h2>Appearance</h2>
+      <button id="toggle-theme">Toggle Dark Mode</button>
+    </section>
+
+    <!-- Profile Settings -->
+    <section class="settings-section">
+      <h2>Profile</h2>
+      <form id="profile-form" method="POST" action="{{ url_for('settings') }}" enctype="multipart/form-data">
+        <label for="username">Display Name:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+
+        <label for="profile-pic">Profile Picture:</label>
+        <input type="file" id="profile-pic" name="profile_pic" accept="image/*">
+
+        <button type="submit">Save Changes</button>
+      </form>
+    </section>
+
+    <!-- Notification Settings -->
+    <section class="settings-section">
+      <h2>Notifications</h2>
+      <label>
+        <input type="checkbox" id="email-notifications">
+        Enable Email Notifications
+      </label>
+      <label>
+        <input type="checkbox" id="daily-reminder">
+        Enable Daily Mood Reminder
+      </label>
+    </section>
+
+    <!-- Data Settings -->
+    <section class="settings-section">
+      <h2>Data & Privacy</h2>
+      <button id="export-data">Export Journal Data</button>
+      <button id="clear-data" style="background-color: red; color: white;">Clear All Data</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mood Journal. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <script src="{{ url_for('static', filename='settings.js') }}"></script>
+</body>
+</html>
